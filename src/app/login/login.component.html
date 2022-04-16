@@ -1,0 +1,20 @@
+<p>Employe login !</p>
+<h2 class="bg-primary">Employe login </h2>
+
+
+<form [formGroup]="loginForms" (ngSubmit)="EmployeeLogin()"  class="row loginPageCss">
+
+    <div class="col-md-3">
+        login ID: <input type="text" class="form-control" width="180px" required  formControlName="txtUserId"/>
+    </div> <br>
+    <div class="col-md-3">
+        Passowrd: <input type="password" class="form-control" width="180px" required formControlName="txtPassword"/>
+    </div>
+    <br>
+    <div class="col-md-3">
+        <button  name="btnLogin" class="btn-primary" id="btnLogin" [disabled]="!loginForms.valid"  >Login</button>
+    </div>
+
+</form>
+<!-- Add below line for render routed page, for exp click button render employee componect -->
+
