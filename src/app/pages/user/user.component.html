@@ -1,0 +1,24 @@
+<h2>User objUser List</h2>
+<div style="border: 1px;border-style: inset;border-color: red;">
+
+  <table class="UserTable" >
+    <thead class="objUserCss"><tr class="objUserCss"><th class="objUserCss">Srialno#</th><th class="objUserCss">objUserName</th><th class="objUserCss">Mobile</th><th class="objUserCss">Active</th><th class="objUserCss">View</th><th class="objUserCss">Action</th></tr></thead>
+
+    <tbody class="objUserCss">
+      <ng-container *ngFor="let objUser of UserList; let i = index">
+        <tr>
+          <td class="objUserCss">{{objUser.Id}}</td>
+          <td class="objUserCss" [ngStyle]="{'color': objUser.IsActive==true?'green':'red','font-weight':objUser.IsActive==true?'bold':'normal'}" >{{objUser.Name|uppercase}}</td>
+          <td class="objUserCss">{{objUser.Mobile}}</td>
+          <td class="objUserCss">{{objUser.IsActive}}</td>
+          <td class="objUserCss"><button (click)="DisplayobjUser(objUser)" id="i+1">Download</button></td>
+          <td class="objUserCss">
+            <a [style]="{'color':'green'}" routerLink ="/add-user">Add</a> |
+            <a [style]="{'color':'blue'}" [routerLink]="['user-edit',objUser.Id]"> Edit</a> |
+            <a [style]="{'color':'red'}"  [routerLink]="['user-add',objUser.Id]"> Delete</a>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>

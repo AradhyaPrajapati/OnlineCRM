@@ -1,0 +1,21 @@
+.EmployeeCss{
+
+  border-style: inset;
+  border-width: 1px;
+  border-color: red;
+
+margin-left: 1px;
+text-align: left;
+
+}
+
+.EmployeeTable{
+
+  border-style: inset;
+  border-width: 1px;
+  border-color: red;
+width: 100%;
+margin-left: 1px;
+text-align: left;
+
+}

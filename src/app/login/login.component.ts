@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
 //Click on button login
 
   EmployeeLogin(){
-     this._loginService.getEmplAPIUrlforEmployeeoyeeByUserName().
+     this._loginService.getEmployeeList().
      subscribe(res => {
        this.user = res;
        var userInArray = this.user.filter(x => x.Name === (this.loginForms.value).txtUserId);
@@ -40,8 +40,8 @@ export class LoginComponent implements OnInit {
        if(userInArray.length > 0)
        {
          localStorage.setItem("myLoginObject", JSON.stringify(userInArray));
-         this._router.navigateByUrl('/employee');
-
+         //this._router.navigateByUrl('/employee');
+         this._router.navigateByUrl('/user');
        }else{
         localStorage.setItem("myLoginObject","");
          alert('Invalid User Name and Passowrd!');

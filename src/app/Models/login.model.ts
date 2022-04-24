@@ -4,6 +4,7 @@ export class User{
     Password:string ;
     Email:string ;
     Mobile:string ;
+    IsActive:boolean;
 
 }
 
